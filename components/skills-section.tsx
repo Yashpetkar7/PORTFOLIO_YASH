@@ -195,9 +195,8 @@ function SkillPill({
       }}
     >
       <motion.div
-        className="group relative flex items-center rounded-xl px-4 py-3 backdrop-blur-xl cursor-default transition-shadow duration-300 hover:shadow-[0_0_20px_var(--pill-glow)]"
+        className="group relative flex items-center rounded-xl px-4 py-3 cursor-default transition-all duration-300 hover:scale-105 hover:shadow-lg"
         style={{
-          "--pill-glow": `${skill.color}25`,
           background: GLASS_BG,
           borderTopWidth: 1,
           borderRightWidth: 1,
@@ -210,7 +209,7 @@ function SkillPill({
           borderTopColor: BORDER,
           borderRightColor: BORDER,
           borderBottomColor: BORDER,
-          borderLeftColor: `${skill.color}40`,
+          borderLeftColor: `${skill.color}80`,
         } as React.CSSProperties}
         animate={{ y: [0, -5, 0] }}
         transition={{
@@ -218,9 +217,6 @@ function SkillPill({
           repeat: Infinity,
           ease: "easeInOut",
           delay: floatDelay,
-        }}
-        whileHover={{
-          scale: 1.05,
         }}
       >
         <div className="flex items-center gap-3">
@@ -240,14 +236,6 @@ function SkillPill({
             {skill.name}
           </span>
         </div>
-
-        {/* Hover glow overlay */}
-        <div
-          className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          style={{
-            background: `radial-gradient(ellipse at center, ${skill.color}08 0%, transparent 70%)`,
-          }}
-        />
       </motion.div>
     </motion.div>
   )

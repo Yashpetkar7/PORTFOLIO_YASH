@@ -38,8 +38,6 @@ export default function Page() {
         <ContactTerminal />
         <Footer />
 
-        {/* Dim Overlay for Dynamic Aesthetic Dimming */}
-        <div className="fixed inset-0 z-40 pointer-events-none bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-700 group-has-[.dim-trigger:hover]/page:opacity-100" aria-hidden="true" />
       </div>
     </>
   )
